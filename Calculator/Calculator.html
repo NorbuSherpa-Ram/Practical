@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <h2>Calculator</h2>
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1">
+    <br>
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2">
+    <br>
+    <button id="multiplyBtn">Multiply</button>
+    <button id="divideBtn">Divide</button>
+    <br>
+    <p id="result"></p>
+
+    <script>
+        const input1 = document.getElementById('num1');
+        const input2 = document.getElementById('num2');
+
+        const multiplyBtn = document.getElementById('multiplyBtn');
+        const divideBtn = document.getElementById('divideBtn');
+        
+        const resultOutput = document.getElementById('result');
+
+        // Function to calculate multiplication
+        function multiply() {
+            const num1 = parseFloat(input1.value);
+            const num2 = parseFloat(input2.value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                resultOutput.textContent = 'Please enter valid numbers.';
+                return;
+            }
+
+            const multiplication = num1 * num2;
+            resultOutput.textContent = `Multiplication: ${multiplication}`;
+        }
+
+        // Function to calculate division
+        function divide() {
+            const num1 = parseFloat(input1.value);
+            const num2 = parseFloat(input2.value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                resultOutput.textContent = 'Please enter valid numbers.';
+                return;
+            }
+
+            if (num2 === 0) {
+                resultOutput.textContent = 'Cannot divide by zero.';
+                return;
+            }
+
+            const division = num1 / num2;
+            resultOutput.textContent = `Division: ${division}`;
+        }
+
+        // Event listeners for button clicks
+        multiplyBtn.addEventListener('click', multiply);
+        divideBtn.addEventListener('click', divide);
+
+        // Event listeners for key press (multiplication: *)
+        document.addEventListener('keypress', function (event) {
+            if (event.key === '*') {
+                multiply();
+            }
+        });
+
+        // Event listeners for key press (division: /)
+        document.addEventListener('keypress', function (event) {
+            if (event.key === '/') {
+                divide();
+            }
+        });
+    </script>
+</body>
+
+</html>
