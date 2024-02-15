@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        ///////Use    prompt()  to get string input and chekc wheather string is Palindrome or not 
+        ////////// if reversed string is same as orginal then  it is called Palindrome String Eg ABCDCBA
+
+        function stringReverse(_inputString) {
+            let reversedString = "";
+            for (let i = _inputString.length - 1; i >= 0; i--) {
+                reversedString += _inputString[i];
+            }
+            return reversedString;
+        }
+
+        const reversed = stringReverse(a);
+        console.log(reversed);
+
+    </script>
+</body>
+
+</html>
