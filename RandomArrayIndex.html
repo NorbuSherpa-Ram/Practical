@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        ////////////////////////////////HOW IT WORK///////////////////////////////////////////////////////
+        //math.random generater float value between 0(inclusinve) and 1(exclusive) 
+        // mean 0 - 0.9999 // value can be 0 but can be 1 
+        // math.floor to round down number 
+        // *25 to get number btwn 0 -25 
+        //+1 to get number form 1 to  25 instead od starting form 0 
+
+        // Generate a random value between 1 and 25 \
+        let numbers = [2, 1, 4, 5, 3];
+
+        let randomNumber = Math.floor(Math.random() * 26) + 1; // why 26 we are starting form 1 and  25 is exclusive mean we get 24 only 
+
+        let ranIndex = Math.floor(Math.random() * numbers.length); // why 26 we are starting form 1 and  25 is exclusive mean we get 24 only 
+
+        alert(`Random Number 1-25 : ${randomNumber}  Random Array value ${numbers[ranIndex]}`);
+
+    </script>
+</body>
+
+</html>
