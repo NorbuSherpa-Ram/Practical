@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Website</title>
+    <style>
+/* Additional CSS styles */
+
+/* Header */
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    /* background-color: #444;? */
+}
+
+/* Navigation */
+nav {
+    background-color: #444;
+    padding: 10px 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Article */
+article h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+article p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Embed */
+embed {
+    display: block;
+    margin: 20px auto; /* Add some space around the embed */
+}
+
+/* Audio and Video */
+audio, video {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Blog  </h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+        </ul>
+    </nav>
+
+    <!-- more about embed https://www.w3schools.com/tags/tag_embed.asp -->
+    <section id="section1">
+        <article>
+            <h2>What Is Web Design </h2>
+            <p>The process of webdesign designing involves creating websites and pages in a way that reflects a
+                company’s brand and information, while also ensuring that a user-friendly interface is provided. Whether
+                you are designing a website, a mobile application, or you are maintaining content on a website,
+                appearance and design are crucial elements that are integrated as crucial elements in the design
+                process. There are many avenues you can choose from when it comes web Development. This is whether you
+                want to build your own site or become a professional hashtag#webdesigner designing sites for others.
+                This article will give you a basic understanding of what web designing is, and what its main elements
+                and uses are</p>
+        </article>
+        <embed src="https://i.pinimg.com/originals/1f/7d/7c/1f7d7c2aaac0a16704bd2d7960c7f2a4.jpg" width="500"
+            height="500">
+
+        <audio controls>
+            <source src="audio.mp3" type="audio/mpeg">
+            <!-- Your browser does not support the audio element. -->
+        </audio>
+    </section>
+
+    <section id="section2">
+        <article>
+            <h2>Back-End Web Architecture</h2>
+            <p>This article provides an overview of servers, databases, routing, and anything else that happens between
+                when a client makes a request and receives a response.
+                Software engineers seem to always be discussing the front-end and the back-end of their apps. But what
+                exactly does this mean?
+
+                The front-end is the code that is executed on the client side. This code (typically HTML, CSS, and
+                JavaScript) runs in the user’s browser and creates the user interface.
+
+                The back-end is the code that runs on the server, that receives requests from the clients, and contains
+                the logic to send the appropriate data back to the client. The back-end also includes the database,
+                which will persistently store all of the data for the application. This article focuses on the hardware
+                and software on the server-side that make this possible.
+
+                Review HTTP and REST if you want to refresh your memory on these topics. These are the main conventions
+                that provide structure to the request-response cycle between clients and servers.
+
+                Let’s start by reviewing the client-server relationship, and then we can start to put the pieces all
+                together!</p>
+        </article>
+        <video controls width="600">
+            <source src="https://www.youtube.com/watch?v=lYXksk5Nj2k" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sample Website. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
