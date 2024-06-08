@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randomized Pairing</title>
+</head>
+<body>
+    <h1>Randomized Pairing</h1>
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput">
+    <label for="interestInput">Interest:</label>
+    <input type="text" id="interestInput">
+    <label for="deviceInput">Has Device (yes/no):</label>
+    <input type="text" id="deviceInput">
+    <button onclick="addStudent()">Add Student</button>
+    <button onclick="randomizePair()">Randomize Pair</button>
+    <ol id="studentsList"></ol>
+    <h2>Paired Students</h2>
+    <ol id="pairedStudentsList"></ol>
+
+    <script>
+        const students = [];
+        const pairedStudents = [];
+
+        function addStudent() {
+            const name = document.getElementById('nameInput').value;
+            const interest = document.getElementById('interestInput').value;
+            const hasDevice = document.getElementById('deviceInput').value.toLowerCase() === 'yes';
+
+            students.push({ name, interest, hasDevice });
+            displayStudents();
+        }
+
+        function displayStudents() {
+            const studentsList = document.getElementById('studentsList');
+            studentsList.innerHTML = '';
+
+            students.forEach(student => {
+                const li = document.createElement('li');
+                li.textContent = `${student.name} - Interest: ${student.interest} - Has Device: ${student.hasDevice ? 'Yes' : 'No'}`;
+                studentsList.appendChild(li);
+            });
+        }
+
+        function displayPairedStudents() {
+            const pairedStudentsList = document.getElementById('pairedStudentsList');
+            pairedStudentsList.innerHTML = '';
+
+            pairedStudents.forEach(student => {
+                const li = document.createElement('li');
+                li.textContent = `Pair: ${student[0].name} (Has Device) - ${student[1].name}`;
+                pairedStudentsList.appendChild(li);
+            });
+        }
+
+        function randomizePair() {
+            const filteredStudents = students.filter(student => student.hasDevice);
+            const nonDeviceStudents = students.filter(student => !student.hasDevice);
+
+            if (filteredStudents.length < 2 && nonDeviceStudents.length > 0) {
+                alert('Not enough students with devices. Add more or pair manually.');
+                return;
+            }
+
+            const randomIndex = Math.floor(Math.random() * filteredStudents.length);
+            const studentWithDevice = filteredStudents[randomIndex];
+            const studentWithoutDevice = nonDeviceStudents.length > 0
+                ? nonDeviceStudents[Math.floor(Math.random() * nonDeviceStudents.length)]
+                : null;
+
+            alert(`Pair: ${studentWithDevice.name} (Has Device) - ${studentWithoutDevice ? studentWithoutDevice.name : 'No student without device'}`);
+
+            // Remove paired students from main list and add to paired list
+            students.splice(students.indexOf(studentWithDevice), 1);
+            if (studentWithoutDevice) {
+                students.splice(students.indexOf(studentWithoutDevice), 1);
+            }
+            pairedStudents.push([studentWithDevice, studentWithoutDevice]);
+
+            displayStudents();
+            displayPairedStudents();
+        }
+    </script>
+</body>
+</html>
