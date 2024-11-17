@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Example</title>
+    <style>
+        
+
+        .container {
+            width: 100%;
+            height: 200px;
+            background-color: lightgray;
+            position: relative; /* Makes this the reference for absolute positioning */
+            border: 1px solid black;
+        }
+
+        /* Box 1: Positioned to the left */
+        .box-left {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            right: 10px; /* Moves the box 10px from the left side */
+            top: 20px;  /* Moves the box 20px from the top */
+        }
+
+        /* Box 2: Positioned to the right */
+        .box-right {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: fixed;
+            right: 10px; /* Moves the box 10px from the right side */
+            top: 20px;  /* Moves the box 20px from the top */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box-left"></div>
+        <div class="box-right"></div>
+    </div>
+</body>
+</html>
